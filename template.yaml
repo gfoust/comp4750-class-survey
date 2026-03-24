@@ -119,8 +119,11 @@ Resources:
 # Define output values resulting from stack creation
 Outputs:
   ApiUrl:
+    Description: "URL for invoking SubmitSurvey; copy-and-paste this into index.html"
     Value: !Sub "https://${SurveyApi}.execute-api.${AWS::Region}.amazonaws.com/prod/submit"
   FrontendUrl:
+    Description: "URL for survey web page"
     Value: !GetAtt SurveyFrontendBucket.WebsiteURL
   FrontendBucketName:
+    Description: "Name of S3 for frontend files"
     Value: !Ref SurveyFrontendBucket
